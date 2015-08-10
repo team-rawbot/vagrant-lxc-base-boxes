@@ -10,11 +10,12 @@ debug 'Bringing container up'
 utils.lxc.start
 
 # Sleep for a bit so that the container can get an IP
-log 'Sleeping for 5 seconds...'
-sleep 5
+log 'Sleeping for 10 seconds...'
+sleep 10
 
 # TODO: Support for appending to this list from outside
-PACKAGES=(vim curl wget man-db bash-completion python-software-properties ca-certificates sudo)
+PACKAGES=(openssh-server curl man-db bash-completion python-software-properties ca-certificates sysvinit-core locales procps command-not-found zsh bzip2 unzip git vim ack-grep silversearcher-ag build-essential wget sudo imagemagick iputils-ping ncurses-term python-pycurl python-apt)
+
 if [ $DISTRIBUTION = 'ubuntu' ]; then
   PACKAGES+=' software-properties-common'
 fi
